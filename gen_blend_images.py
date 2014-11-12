@@ -2,6 +2,7 @@ import bpy
 
 pos_range = 3
 fov=50
+pi=3.14159
 scene = bpy.context.scene
 #scene.render.image_settings.file_fomat = 'jpg'
 scene.render.resolution_x = 512
@@ -16,6 +17,7 @@ for object in bpy.data.objects:
         object.select = True
 bpy.ops.object.delete()
 bpy.ops.mesh.primitive_ico_sphere_add()
+bpy.types.ImageFormatSettings.color_mode='BW'
 
 for xx in range(-pos_range,pos_range+1):
     for yy in range(-pos_range,pos_range+1):
